@@ -1,3 +1,5 @@
+syntax = "proto3";
+
 message EchoRequest {
     string message = 1;
 }
