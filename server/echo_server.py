@@ -7,7 +7,8 @@ import echo_pb2_grpc
 class EchoServiceServicer(echo_pb2_grpc.EchoServiceServicer):
 
     def Echo(self, request, context):
-        return request.message
+        response = echo_pb2.EchoResponse(message=request.message)
+        return response
 
 
 def serve():
