@@ -14,7 +14,7 @@ def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     echo_pb2_grpc.add_EchoServiceServicer_to_server(
         EchoServiceServicer(), server)
-    server.add_insecure_port('[::]:50051')
+    server.add_insecure_port('[::]:9090')
     server.start()
     server.wait_for_termination()
 
