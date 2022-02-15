@@ -4,4 +4,11 @@ services:
       context: .
       dockerfile: ./server/Dockerfile
     ports:
-      - "50051:50051"
+      - 9090:9090
+  envoy-proxy:
+    build:
+      context: .
+      dockerfile: ./envoy/Dockerfile
+    ports:
+      - 9901:9901
+      - 8080:8080
